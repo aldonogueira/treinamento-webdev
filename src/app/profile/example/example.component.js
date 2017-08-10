@@ -15,7 +15,8 @@
 	/** @ngInject */
 	function controller() {	
 		var $ctrl = this;
-		$ctrl.$onInit = function() {
+
+        $ctrl.$onInit = function() {
 			$ctrl.itemArray = [
 				{id: 1, name: 'first'},
 				{id: 2, name: 'second'},
@@ -46,6 +47,24 @@
 				}
 			];
 		}
+        
+        $ctrl.listSkills = function(user) {
+            var levelUI = ["Iniciante", "Médio", "Avançado"];
+            var skills = [];
+            
+            user.getSkills().forEach(function(item, index, array) {
+                skills.push(
+                    {
+                        competência : item.getName(),
+                        nível : levelUI[item.getLevel()-1],
+                        experiências : item.getExperienceCount(),
+                        projetos : item.getProjectCount()
+                    }
+                )
+            });
+            
+            return skills;
+        }
 	}
 
 })();

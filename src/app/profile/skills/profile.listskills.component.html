@@ -1,0 +1,14 @@
+<ul class="list-group">
+    <li ng-show="$ctrl.showNew" class="list-group-item">
+        <span class="label label-info">Novo</span>
+        {{$ctrl.newSkill.getname()}}
+    </li>
+    <li ng-repeat="skill in $ctrl.skills" class="list-group-item">
+        {{ skill.getName() }}
+        <div class="btn-group" role="group" aria-label="...">
+            <button type="button" class="btn btn-default" ng-click="$ctrl.addNoob({index: $index});">Iniciante</button>
+            <button type="button" class="btn btn-default" ng-click="$ctrl.addMid({index: $index});">Médio</button>
+            <button type="button" class="btn btn-default" ng-click="$ctrl.addBatman({index: $index});">Avançado</button>
+        </div>
+    </li>
+</ul>

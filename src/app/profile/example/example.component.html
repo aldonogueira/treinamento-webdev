@@ -18,7 +18,7 @@ Pagina entrada perfil
 </ui-select>
 <br>
 
- <div id="grid1" ui-grid="{ data: $ctrl.myData }" class="grid"></div>
+ <div id="grid1" ui-grid="{ data: $ctrl.listSkills($ctrl.user) }" class="grid"></div>
 
  <script>
      $( document ).ready(function(){

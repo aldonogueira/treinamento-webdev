@@ -1,0 +1,12 @@
+<div class="container" ng-controller="AddSkillController as $ctrl">
+    <h3>Adição de novas competências</h3>
+
+    <div class="input-group">
+        <input type="text" ng-model="searchSkill" placeholder="search skill" class="form-control">
+        <span class="input-group-btn">
+          <button class="btn btn-primary" ng-click="$ctrl.search(searchSkill);">Search</button>
+      </span>
+    </div>
+
+    <list-skills skills="$ctrl.skills" show-new="$ctrl.showNew" new-skill="$ctrl.newSkill" add-noob="$ctrl.addNoob(index)" add-mid="$ctrl.addMid(index)" add-batman="$ctrl.addBatman(index)"></list-skills>
+</div>
