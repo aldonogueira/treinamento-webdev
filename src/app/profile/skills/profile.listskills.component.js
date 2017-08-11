@@ -13,7 +13,10 @@
                 newSkill: '<',
                 addNoob: '&',
                 addMid: '&',
-                addBatman: '&'
+                addBatman: '&',
+                createAndAddNoob: '&',
+                createAndAddMid: '&',
+                createAndAddBatman: '&'
             }
         });
 

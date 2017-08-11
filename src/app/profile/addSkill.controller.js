@@ -5,8 +5,7 @@
         .module('profile')
         .controller('AddSkillController', AddSkillController);
 
-    AddSkillController.$inject = ['$scope', 'skillDataService', 'Skill'];
-
+    /** @ngInject */
     function AddSkillController($scope, skillDataService, Skill) {
         var $ctrl = this;
 
@@ -53,6 +52,22 @@
 
         $ctrl.addBatman = function (index) {
             $ctrl.add($ctrl.skills[index], 2);
+        }
+
+        $ctrl.createAndAddNoob = function () {
+            $ctrl.createAndAdd(0);
+        }
+
+        $ctrl.createAndAddMid = function () {
+            $ctrl.createAndAdd(1);
+        }
+
+        $ctrl.createAndAddBatman = function () {
+            $ctrl.createAndAdd(2);
+        }
+
+        $ctrl.createAndAdd = function (level) {
+          $ctrl.add($ctrl.newSkill, level);
         }
 
         $ctrl.add = function (skill, level) {

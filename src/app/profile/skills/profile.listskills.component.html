@@ -1,7 +1,12 @@
 <ul class="list-group">
     <li ng-show="$ctrl.showNew" class="list-group-item">
         <span class="label label-info">Novo</span>
-        {{$ctrl.newSkill.getname()}}
+        {{$ctrl.newSkill.getName()}}
+        <div class="btn-group" role="group" aria-label="...">
+            <button type="button" class="btn btn-default" ng-click="$ctrl.createAndAddNoob();">Iniciante</button>
+            <button type="button" class="btn btn-default" ng-click="$ctrl.createAndAddMid();">Médio</button>
+            <button type="button" class="btn btn-default" ng-click="$ctrl.createAndAddBatman();">Avançado</button>
+        </div>
     </li>
     <li ng-repeat="skill in $ctrl.skills" class="list-group-item">
         {{ skill.getName() }}
